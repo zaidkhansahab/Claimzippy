@@ -154,7 +154,7 @@ const App = () => {
                 <div className="w-full h-full flex items-center justify-center border bg-gray-600 text-white">Delete</div>
               </div>
             </div>
-            <div className="w-12/12 h-60 overflow-y-scroll">
+            <div className="w-12/12 h-60 overflow-y-scroll overflow-auto">
 
               {getData.map((task) => (
                 <List key={task._id} taskId={task._id} task={task.task} description={task.description} setUpdateUI={setUpdateUI} updateMode={updateMode} />
