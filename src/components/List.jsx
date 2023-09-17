@@ -5,7 +5,7 @@ import { baseURL } from '../utils/constant'
 const List = ({ task, description, updateMode, taskId }) => {
   console.log(taskId)
   const deleteTask = () => {
-    axios.delete(`${baseURL}/delete/${taskId}`)
+    axios.delete(`${baseURL}/api/delete/${taskId}`)
       .then((response) => {
         console.log('Item deleted');
       })

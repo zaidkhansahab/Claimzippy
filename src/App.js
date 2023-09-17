@@ -19,7 +19,7 @@ const App = () => {
 
 
   const getdata = () => {
-    axios.get(`${baseURL}/get`).then((res) => {
+    axios.get(`${baseURL}/api/get`).then((res) => {
       console.log(res.data);
       setGetdata(res.data)
     })
@@ -30,7 +30,7 @@ const App = () => {
   }, [getData]);
 
   const addTask = () => {
-    axios.post(`${baseURL}/save`, { task: tasks, description }).then((res) => {
+    axios.post(`${baseURL}/api/save`, { task: tasks, description }).then((res) => {
       console.log(res.data);
       setTasks(res.data.task);
       setDescription(res.data.description)
@@ -47,7 +47,7 @@ const App = () => {
   };
 
   const updateTask = () => {
-    axios.put(`${baseURL}/update/${updateId}`, { task: tasks, description }).then((res) => {
+    axios.put(`${baseURL}/api/update/${updateId}`, { task: tasks, description }).then((res) => {
       console.log(res.data);
       setUpdateUI((prevState) => !prevState);
       setUpdateId(null);
